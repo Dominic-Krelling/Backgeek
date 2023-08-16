@@ -1,0 +1,18 @@
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Dominic", email = "dominic.krelling@gmail.com"},
+]
+dependencies = [
+    "djangorestframework>=3.14.0",
+]
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=23.7.0",
+]
