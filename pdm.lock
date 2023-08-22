@@ -51,6 +51,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "django-cors-headers"
+version = "4.2.0"
+requires_python = ">=3.8"
+summary = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
+dependencies = [
+    "Django>=3.2",
+]
+
+[[package]]
 name = "djangorestframework"
 version = "3.14.0"
 requires_python = ">=3.6"
@@ -117,7 +126,7 @@ summary = "Provider of IANA time zone data"
 lock_version = "4.2"
 cross_platform = true
 groups = ["default", "dev"]
-content_hash = "sha256:1b511784d0559ce8901ede2edae7f604ba1de2c1f0527ed1fc91653e7360e578"
+content_hash = "sha256:ed92f34cc87cd973645c9ef2243200b21638c5138052b045ffaf6c7a29dee15a"
 
 [metadata.files]
 "asgiref 3.7.2" = [
@@ -159,6 +168,10 @@ content_hash = "sha256:1b511784d0559ce8901ede2edae7f604ba1de2c1f0527ed1fc91653e7
 "django 4.2.4" = [
     {url = "https://files.pythonhosted.org/packages/7f/9e/fc6bab255ae10bc57fa2f65646eace3d5405fbb7f5678b90140052d1db0f/Django-4.2.4-py3-none-any.whl", hash = "sha256:860ae6a138a238fc4f22c99b52f3ead982bb4b1aad8c0122bcd8c8a3a02e409d"},
     {url = "https://files.pythonhosted.org/packages/8d/d2/a4f823741a12089e9ea0f68e1e7d3b6ad5b64e1665fbe9377cd9e1dc09cc/Django-4.2.4.tar.gz", hash = "sha256:7e4225ec065e0f354ccf7349a22d209de09cc1c074832be9eb84c51c1799c432"},
+]
+"django-cors-headers 4.2.0" = [
+    {url = "https://files.pythonhosted.org/packages/a7/f7/ae456ea653acf99c471287741f84f9e5c8a1458d1b44715ea94869e27b56/django_cors_headers-4.2.0-py3-none-any.whl", hash = "sha256:9ada212b0e2efd4a5e339360ffc869cb21ac5605e810afe69f7308e577ea5bde"},
+    {url = "https://files.pythonhosted.org/packages/cb/5d/739ec1adbe848cdb0f07c3b621561c9589e491cc0443a8d16cec23c107a5/django_cors_headers-4.2.0.tar.gz", hash = "sha256:f9749c6410fe738278bc2b6ef17f05195bc7b251693c035752d8257026af024f"},
 ]
 "djangorestframework 3.14.0" = [
     {url = "https://files.pythonhosted.org/packages/8e/53/5b2a002c5ebafd60dff1e1945a7d63dee40155830997439a9ba324f0fd50/djangorestframework-3.14.0.tar.gz", hash = "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8"},

@@ -3,8 +3,9 @@ from django.db import models
 class Camiseta(models.Model):
     titulo = models.CharField(max_length=999)
     descricao = models.CharField(max_length=100)
-    preco = models.DecimalField(decimal_places=999, max_digits=999)
-    
+    preco = models.DecimalField(
+        max_digits=7, decimal_places=2, default=0, null=True, blank=True
+    )    
     def __str__(self):
         return f"{self.titulo} ({self.preco})"
     class Meta:
@@ -13,8 +14,10 @@ class Camiseta(models.Model):
 
 class Calca(models.Model):
     titulo = models.CharField(max_length=999)
-    descricao = models.CharField(max_length=100)
-    preco = models.DecimalField(decimal_places=999, max_digits=999)
+    descricao = models.CharField(max_length=100)    
+    preco = models.DecimalField(
+        max_digits=7, decimal_places=2, default=0, null=True, blank=True
+    )
     
     def __str__(self):
         return f"{self.titulo} ({self.preco})"
@@ -25,8 +28,10 @@ class Calca(models.Model):
 
 class Chapeu(models.Model):
     titulo = models.CharField(max_length=999)
-    descricao = models.CharField(max_length=100)
-    preco = models.DecimalField(decimal_places=999, max_digits=999)
+    descricao = models.CharField(max_length=100)    
+    preco = models.DecimalField(
+        max_digits=7, decimal_places=2, default=0, null=True, blank=True
+    )
     
     def __str__(self):
         return f"{self.titulo} ({self.preco})"
@@ -37,8 +42,9 @@ class Chapeu(models.Model):
 class Tenis(models.Model):
     titulo = models.CharField(max_length=999)
     descricao = models.CharField(max_length=100)
-    preco = models.DecimalField(decimal_places=999, max_digits=999)
-    
+    preco = models.DecimalField(
+        max_digits=7, decimal_places=2, default=0, null=True, blank=True
+    )    
     def __str__(self):
         return f"{self.titulo} ({self.preco})"
     class Meta:
