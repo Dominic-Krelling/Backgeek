@@ -1,23 +1,33 @@
 from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
-from backgeek.models import Calca, Camiseta, Chapeu, Tenis
+from uploader.models import Image
+from uploader.serializers import ImageSerializer
 
-class CalcaSerializer(ModelSerializer):
-    class Meta:
-        model = Calca
-        fields = "__all__"
+from backgeek.models import Camiseta
+
 
 class CamisetaSerializer(ModelSerializer):
     class Meta:
         model = Camiseta
         fields = "__all__"
+    imagem_attachment_key = SlugRelatedField(
+        source="imagem",
+        queryset=Image.objects.all(),
+        slug_field="attachment_key",
+        required=False,
+        write_only=True,
+    )
+    imagem = ImageSerializer(required=False, read_only=True)
 
-class ChapeuSerializer(ModelSerializer):
+class CamisetaDetailSerializer(ModelSerializer):
     class Meta:
-        model = Chapeu
+        model = Camiseta
         fields = "__all__"
+        depth = 1
+        imagem = ImageSerializer(required = False)
 
-class TenisSerializer(ModelSerializer):
+class CamisetaListSerializer(ModelSerializer):
     class Meta:
-        model = Tenis
-        fields = "__all__"
+        model = Camiseta
+        fields = ["id", "modelo", "preco"]
