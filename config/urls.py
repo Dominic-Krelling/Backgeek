@@ -10,7 +10,7 @@ from uploader.router import router as uploader_router
 
 router = DefaultRouter()
 
-router.register(r"camiseta", CamisetaViewSet)
+router.register(r"camisetas", CamisetaViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

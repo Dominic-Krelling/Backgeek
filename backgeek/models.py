@@ -8,7 +8,7 @@ class Camiseta(models.Model):
         max_digits=7, decimal_places=2, default=0, null=True, blank=True
     )
     imagem = models.ManyToManyField(
-        Image, related_name="Camiseta",
+        Image, related_name="Camiseta", null= True, blank=True
     )
         
     def __str__(self):
