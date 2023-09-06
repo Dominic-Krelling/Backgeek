@@ -15,3 +15,6 @@ class Camiseta(models.Model):
     class Meta:
         verbose_name = "Camiseta"
         verbose_name_plural = "Camisetas"
+
+    def first_image(self):
+        return self.imagem.all()[0].url

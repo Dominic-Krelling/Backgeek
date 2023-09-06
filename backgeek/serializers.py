@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from rest_framework.serializers import ModelSerializer, SlugRelatedField
+from rest_framework.serializers import ModelSerializer, SlugRelatedField, CharField
 
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
@@ -30,4 +30,4 @@ class CamisetaDetailSerializer(ModelSerializer):
 class CamisetaListSerializer(ModelSerializer):
     class Meta:
         model = Camiseta
-        fields = ["id", "descricao", "titulo", "preco"]
+        fields = ["id", "descricao", "titulo", "preco", "first_image"]
