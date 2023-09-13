@@ -14,6 +14,9 @@ dependencies = [
     "django-extensions>=3.2.3",
     "pydotplus>=2.0.2",
     "python-dotenv>=1.0.0",
+    "gunicorn>=21.2.0",
+    "whitenoise[brotli]>=6.5.0",
+    "django>=4.2.5",
 ]
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -22,3 +25,6 @@ license = {text = "MIT"}
 dev = [
     "black>=23.7.0",
 ]
+[[tool.pdm.autoexport]]
+filename = "requirements.txt"
+whithout-hashes = "true"

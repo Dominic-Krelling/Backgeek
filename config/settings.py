@@ -65,6 +65,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -144,3 +145,7 @@ MEDIA_URL = "http://191.52.55.170:19003/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
+
+if MODE == "PRODUCTION":
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATIC_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
