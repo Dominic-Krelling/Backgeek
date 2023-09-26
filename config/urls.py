@@ -11,8 +11,8 @@ from uploader.router import router as uploader_router
 router = DefaultRouter()
 
 router.register(r"camisetas", CamisetaViewSet)
-router.register(r"Estampa", EstampaViewSet)
-router.register(r"Moletom", MoletomViewSet)
+router.register(r"estampas", EstampaViewSet)
+router.register(r"moletons", MoletomViewSet)
 
 
 urlpatterns = [
