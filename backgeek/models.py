@@ -39,3 +39,6 @@ class Moletom(models.Model):
     class Meta:
         verbose_name = "Moletom"
         verbose_name_plural = "Moletons"
+
+    def first_image(self):
+        return self.imagem.all()[0].url
