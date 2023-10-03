@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "corsheaders",
     "rest_framework",
+    "drf_spectacular",
     "uploader",
     "backgeek",
 ]
@@ -142,6 +143,15 @@ STATIC_URL = "static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Backgeek API",
+    "DESCRIPTION": "API para venda de moda geek.",
+}
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 MEDIA_URL = "http://191.52.55.170:19003/media/"
@@ -152,3 +162,4 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 if MODE == "PRODUCTION":
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
