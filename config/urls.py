@@ -10,21 +10,23 @@ from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
 
-from backgeek.views import CamisetaViewSet, EstampaViewSet, MoletomViewSet
+from backgeek.views import CamisetaViewSet, EstampaViewSet, MoletomViewSet, ProdutoViewSet, CategoriaViewSet
 from uploader.router import router as uploader_router
 
 router = DefaultRouter()
 
 router.register(r"camisetas", CamisetaViewSet)
+router.register(r"produto", ProdutoViewSet)
 router.register(r"estampas", EstampaViewSet)
 router.register(r"moletons", MoletomViewSet)
+router.register(r"categoria", CategoriaViewSet)
+
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(router.urls)), 
     path("api/media/", include(uploader_router.urls)),
-    # OpenAPI 3
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     
     path(
